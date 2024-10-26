@@ -1,16 +1,6 @@
 plugins {
-    id 'com.android.library' version '8.3.0'
+    id 'com.android.library'
     id 'maven-publish'
-}
-
-ext {
-    tools = [
-            minSdk      : 21,
-            targetSdk   : 34,
-            compileSdk  : 34,
-            versionCode: 3,
-            versionName: '1.9.4'
-    ]
 }
 
 group "com.github.lion1988dev"
@@ -18,14 +8,14 @@ group "com.github.lion1988dev"
 android {
     namespace "com.shockwave.pdfium"
 
-    compileSdk rootProject.tools.compileSdk
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion rootProject.tools.minSdkVersion
-        targetSdk rootProject.tools.targetSdk
+        minSdkVersion 21
+        targetSdk 34
 
-        versionCode rootProject.tools.versionCode
-        versionName "${rootProject.tools.versionName}"
+        versionCode 3
+        versionName "1.9.4"
 
         buildConfigField 'String', 'VERSION_NAME', "\"${defaultConfig.versionName}\""
 
@@ -45,11 +35,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
     }
 
     publishing {
@@ -78,7 +63,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
 }
 
 publishing {
